@@ -1,0 +1,14 @@
+local component = require("component")
+local rs = component.redstone
+local sides = require("sides")
+alarm = component.os_alarm
+
+while true do
+if (rs.getInput(sides.top))>0 then
+alarm.setRange(15)
+alarm.activate()
+
+else
+alarm.deactivate()
+end
+end
